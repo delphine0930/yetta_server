@@ -1,0 +1,10 @@
+### blog 조회
+
+GET http://localhost:8080/api/blogs
+Content-Type: application/json
+
+
+### blog 조회 with search
+
+GET http://localhost:8080/api/blogs?search=주식
+Content-Type: application/json
