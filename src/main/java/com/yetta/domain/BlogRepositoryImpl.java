@@ -33,7 +33,8 @@ public class BlogRepositoryImpl implements BlogSearchRepository {
                         blog.totalContent,
                         blog.monthlyAvgContent,
                         blog.tags,
-                        blog.url))
+                        blog.url,
+                        blog.newContent))
                 .from(blog)
                 .where(searchAll(input))
                 .orderBy(blog.ranking.asc())

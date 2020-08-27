@@ -20,10 +20,11 @@ public class Blog {
     private String tags;
     private String url;
     private LocalDate originDate;
-    private String blogComment;
+    private String comment;
     private Integer totalScore;
     private Integer myScore;
     private Integer recordMyScore;
     private Integer recordNoContent;
+    private Boolean newContent;
 
 }
