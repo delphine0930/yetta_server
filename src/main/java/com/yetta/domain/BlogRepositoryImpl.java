@@ -27,15 +27,15 @@ public class BlogRepositoryImpl implements BlogSearchRepository {
         return jpaQueryFactory
                 .select(Projections.constructor(BlogResponseDto.class,
                         blog.ranking,
-                        blog.yesterdayRanking,
-                        blog.name,
-                        blog.subscriber,
-                        blog.totalContent,
-                        blog.monthlyAvgContent,
-                        blog.tags,
-                        blog.url,
-                        blog.newContent,
-                        blog.comment))
+                        blog._01yesterdayRanking,
+                        blog._02name,
+                        blog._03subscriber,
+                        blog._04totalContent,
+                        blog._05monthlyAvgContent,
+                        blog._06tags,
+                        blog._07url,
+                        blog._14newContent,
+                        blog._09comment))
                 .from(blog)
                 .where(searchAll(input))
                 .orderBy(blog.ranking.asc())
@@ -49,10 +49,10 @@ public class BlogRepositoryImpl implements BlogSearchRepository {
     }
 
     private BooleanExpression tagContains(String input) {
-        return StringUtils.hasText(input) ? blog.tags.contains(input) : null;
+        return StringUtils.hasText(input) ? blog._06tags.contains(input) : null;
     }
 
     private BooleanExpression nameContains(String input) {
-        return StringUtils.hasText(input) ? blog.name.contains(input) : null;
+        return StringUtils.hasText(input) ? blog._02name.contains(input) : null;
     }
 }

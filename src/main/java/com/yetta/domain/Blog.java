@@ -12,19 +12,19 @@ import java.time.LocalDate;
 public class Blog {
     @Id
     private Long ranking;
-    private Long yesterdayRanking;
-    private String name;
-    private Long subscriber;
-    private Long totalContent;
-    private Long monthlyAvgContent;
-    private String tags;
-    private String url;
-    private LocalDate originDate;
-    private String comment;
-    private Integer totalScore;
-    private Integer myScore;
-    private Integer recordMyScore;
-    private Integer recordNoContent;
-    private Boolean newContent;
+    private Long _01yesterdayRanking;
+    private String _02name;
+    private Long _03subscriber;
+    private Long _04totalContent;
+    private Long _05monthlyAvgContent;
+    private String _06tags;
+    private String _07url;
+    private LocalDate _08originDate;
+    private String _09comment;
+    private Integer _10totalScore;
+    private Integer _11myScore;
+    private Integer _12recordMyScore;
+    private Integer _13recordNoContent;
+    private Boolean _14newContent;
 
 }
