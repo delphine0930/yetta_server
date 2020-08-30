@@ -25,6 +25,6 @@ public class Blog {
     private Integer _11myScore;
     private Integer _12recordMyScore;
     private Integer _13recordNoContent;
-    private Boolean _14newContent;
+    private String _14newContent;
 
 }

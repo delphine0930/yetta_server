@@ -1,8 +1,7 @@
 package com.yetta.controller.dto;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import com.yetta.domain.Blog;
 import lombok.Getter;
+import org.springframework.util.StringUtils;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,14 +16,14 @@ public class BlogResponseDto {
     private Long monthlyAvgContent;
     private List<String> tags;
     private String url;
-    private Boolean newContent;
+    private String newContent;
     private String comment;
 
     public BlogResponseDto(Long ranking, Long yesterdayRanking,
                            String name, Long subscriber,
                            Long totalContent, Long monthlyAvgContent,
                            String tags, String url,
-                           Boolean newContent, String comment) {
+                           String newContent, String comment) {
         this.ranking = ranking;
         this.yesterdayRanking = yesterdayRanking;
         this.name = name;
@@ -33,7 +32,7 @@ public class BlogResponseDto {
         this.monthlyAvgContent = monthlyAvgContent;
         this.tags = Arrays.asList(tags.split(","));
         this.url = url;
-        this.newContent = newContent == null ? false : newContent;
+        this.newContent = StringUtils.hasText(newContent) ? "FALSE" : newContent;
         this.comment = comment;
     }
 
