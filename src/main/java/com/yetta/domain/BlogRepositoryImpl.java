@@ -4,6 +4,7 @@ import com.querydsl.core.QueryFactory;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.yetta.controller.dto.BlogResponseDto;
 import org.springframework.data.domain.Pageable;
 import org.springframework.util.StringUtils;
@@ -37,15 +38,23 @@ public class BlogRepositoryImpl implements BlogSearchRepository {
                         blog._14newContent,
                         blog._09comment))
                 .from(blog)
-                .where(searchAll(input))
+                .where(
+                        searchAll(input),
+                        topN(100) // 상위 100개 고정
+                )
                 .orderBy(blog.ranking.asc())
                 .offset(pageable.getOffset())
                 .limit(pageable.getPageSize())
                 .fetch();
     }
 
+
     private BooleanExpression searchAll(String input) {
         return StringUtils.hasText(input) ? tagContains(input).or(nameContains(input)) : null;
+    }
+
+    private BooleanExpression topN(Integer n) {
+        return n == null ? null : blog.ranking.loe(n);
     }
 
     private BooleanExpression tagContains(String input) {
