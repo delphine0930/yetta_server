@@ -1,10 +1,8 @@
 package com.yetta.domain;
 
-import com.querydsl.core.QueryFactory;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.yetta.controller.dto.BlogResponseDto;
 import org.springframework.data.domain.Pageable;
 import org.springframework.util.StringUtils;

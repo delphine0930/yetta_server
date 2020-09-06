@@ -32,7 +32,7 @@ public class BlogResponseDto {
         this.monthlyAvgContent = monthlyAvgContent;
         this.tags = Arrays.asList(tags.split(","));
         this.url = url;
-        this.newContent = StringUtils.hasText(newContent) ? "FALSE" : newContent;
+        this.newContent = StringUtils.hasText(newContent) ? newContent : "FALSE";
         this.comment = comment;
     }
 
